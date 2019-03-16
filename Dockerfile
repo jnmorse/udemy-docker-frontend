@@ -6,5 +6,6 @@ COPY ./ ./
 RUN npm run build
 
 FROM nginx
-EXPOSE $PORT:80
+ENV NGINX_PORT
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
