@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t jnmorse/udemy-docker-frontend -f Dockerfile.dev .
+
+script:
+  - docker run jnmorse/udemy-docker-frontend npm run test -- --coverage
