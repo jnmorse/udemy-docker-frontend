@@ -9,15 +9,22 @@ before_install:
 script:
   - docker run jnmorse/udemy-docker-frontend npm run test -- --coverage
 
+# Elastic Beanstock Deploy.. was failing
+# deploy:
+#  provider: elasticbeanstalk
+#  region: "us-east-1"
+#  app: "docker-react"
+#  env: "DockerReact-env"
+#  bucket_name: "elasticbeanstalk-us-east-1-573537116965"
+#  bucket_path: "docker-react"
+#  on:
+#    branch: master
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key:
+#    secure: "$AWS_PRIVATE_KEY"
+
+# Heroku deploy
 deploy:
-  provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "docker-react"
-  env: "DockerReact-env"
-  bucket_name: "elasticbeanstalk-us-east-1-573537116965"
-  bucket_path: "docker-react"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_PRIVATE_KEY"
+  provider: heroku
+  api_key:
+    secure: "$HEROKU_KEY"
