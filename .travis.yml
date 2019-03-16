@@ -28,4 +28,3 @@ deploy:
   provider: heroku
   api_key:
     secure: "$HEROKU_KEY"
-  strategy: git
