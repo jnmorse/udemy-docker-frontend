@@ -12,10 +12,10 @@ script:
 # Elastic Beanstock Deploy.. was failing
 deploy:
  provider: elasticbeanstalk
- region: "us-east-1"
+ region: "us-east-2"
  app: "docker-react"
  env: "DockerReact-env"
- bucket_name: "elasticbeanstalk-us-east-1-573537116965"
+ bucket_name: "elasticbeanstalk-us-east-2-573537116965"
  bucket_path: "docker-react"
  on:
    branch: master
